@@ -53,6 +53,7 @@
     <ProjectReference Include="..\AppInterop\AppInterop.csproj">
       <Project>{940f068b-ad1e-480d-b9f1-fb09298796b9}</Project>
       <Name>AppInterop</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
     <ProjectReference Include="..\Library1\Library1.csproj">
       <Project>{f7ece80d-c2ec-4403-8fde-6050369342cc}</Project>

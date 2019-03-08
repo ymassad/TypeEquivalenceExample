@@ -14,18 +14,22 @@ namespace FrameworkApp
         static void Main(string[] args)
         {
             var test2 = Class2.Create();
+
             Console.WriteLine(Class1.Consume(test2));
 
             var test1 = Class1.Create();
 
-
             Console.WriteLine(Class2.Consume(test1));
 
-            
-            Console.WriteLine(test1.GetType() == test2.GetType());
+            var interface1Type = test1.GetType().GetInterfaces().Single();
 
-            Console.WriteLine(test1.GetType().IsEquivalentTo(test2.GetType()));
+            var interface2Type = test2.GetType().GetInterfaces().Single();
 
+            Console.WriteLine(interface1Type == interface2Type);
+
+            Console.WriteLine(interface1Type.IsEquivalentTo(interface2Type));
+
+            List<ITest> list = new[] { test1, test2 }.ToList();
         }
     }
 }
